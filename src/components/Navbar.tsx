@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { BrandCrest } from './BrandCrest';
 
@@ -16,16 +16,32 @@ const NAV_LINKS = [
 export function Navbar({ onOpenRegistration }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[68px] flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[68px] flex items-center justify-between gap-4 lg:gap-8">
         {/* Zone 1: Brand wordmark + emblem (strictly single-line, no subtitle clutter) */}
         <a
           href="#accueil"
-          className="flex items-center gap-3 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f] rounded-md"
+          className="flex items-center gap-2.5 sm:gap-3 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f] rounded-md"
         >
-          <BrandCrest className="h-10 w-auto object-contain" />
-          <span className="font-serif font-bold text-lg tracking-tight text-[#0b1f3f]">
+          <BrandCrest className="h-9 sm:h-10 w-auto object-contain" />
+          <span className="font-serif font-bold text-base sm:text-lg tracking-tight text-[#0b1f3f]">
             CEREC-ISCOM
           </span>
         </a>
@@ -33,7 +49,7 @@ export function Navbar({ onOpenRegistration }: NavbarProps) {
         {/* Zone 2: 4 clean single-line navigation links */}
         <nav
           aria-label="Navigation principale"
-          className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600"
+          className="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium text-slate-600"
         >
           {NAV_LINKS.map((link) => (
             <a
@@ -47,7 +63,7 @@ export function Navbar({ onOpenRegistration }: NavbarProps) {
         </nav>
 
         {/* Zone 3: 1 primary action + mobile menu toggle */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             type="button"
             onClick={onOpenRegistration}
@@ -70,13 +86,13 @@ export function Navbar({ onOpenRegistration }: NavbarProps) {
 
       {/* Mobile navigation drawer */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-1">
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-1 shadow-lg">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block px-3 py-3 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-[#0b1f3f]"
+              className="flex items-center min-h-[44px] px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-[#0b1f3f]"
             >
               {link.label}
             </a>
@@ -88,7 +104,7 @@ export function Navbar({ onOpenRegistration }: NavbarProps) {
                 setMobileOpen(false);
                 onOpenRegistration();
               }}
-              className="w-full py-3 px-5 text-sm font-semibold text-[#0b1f3f] bg-[#e0a526] hover:bg-[#eab33a] rounded-lg transition-colors cursor-pointer"
+              className="w-full min-h-[48px] py-3 px-5 text-sm font-semibold text-[#0b1f3f] bg-[#e0a526] hover:bg-[#eab33a] rounded-xl transition-colors cursor-pointer"
             >
               S&apos;inscrire maintenant
             </button>

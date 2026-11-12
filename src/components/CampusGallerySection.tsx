@@ -50,7 +50,7 @@ export function CampusGallerySection() {
                 <button
                   type="button"
                   onClick={() => setActivePhoto(photo)}
-                  className="relative block w-full h-full min-h-[260px] aspect-[16/11] overflow-hidden bg-[#0b1f3f] cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f]"
+                  className="relative block w-full h-full min-h-[220px] sm:min-h-[260px] aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/11] overflow-hidden bg-[#0b1f3f] cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f]"
                   aria-label={`Agrandir : ${photo.caption}`}
                 >
                   <img
@@ -63,7 +63,7 @@ export function CampusGallerySection() {
                     aria-hidden="true"
                     className="absolute inset-0 bg-gradient-to-t from-[#07142b]/80 via-transparent to-transparent"
                   />
-                  <span className="absolute top-3.5 right-3.5 w-9 h-9 rounded-lg bg-white/90 text-[#0b1f3f] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                  <span className="absolute top-3.5 right-3.5 w-9 h-9 rounded-lg bg-white/90 text-[#0b1f3f] flex items-center justify-center opacity-90 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-150">
                     <Expand className="w-4 h-4" />
                   </span>
                   <figcaption className="absolute bottom-4 left-5 right-5 text-white">
@@ -145,7 +145,7 @@ export function CampusGallerySection() {
         )}
 
         {/* Row 2: 3 Portrait campus & ceremony photos with object-top framing */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {portraitPhotos.map((photo) => (
             <figure
               key={photo.id}
@@ -154,7 +154,7 @@ export function CampusGallerySection() {
               <button
                 type="button"
                 onClick={() => setActivePhoto(photo)}
-                className="relative block w-full aspect-[3/4] overflow-hidden bg-[#0b1f3f] cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f]"
+                className="relative block w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden bg-[#0b1f3f] cursor-pointer text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f]"
                 aria-label={`Agrandir : ${photo.caption}`}
               >
                 <img
@@ -167,7 +167,7 @@ export function CampusGallerySection() {
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-t from-[#07142b]/85 via-[#07142b]/15 to-transparent"
                 />
-                <span className="absolute top-3.5 right-3.5 w-9 h-9 rounded-lg bg-white/90 text-[#0b1f3f] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                <span className="absolute top-3.5 right-3.5 w-9 h-9 rounded-lg bg-white/90 text-[#0b1f3f] flex items-center justify-center opacity-90 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-150">
                   <Expand className="w-4 h-4" />
                 </span>
                 <figcaption className="absolute bottom-4 left-4 right-4 text-white">
@@ -190,11 +190,11 @@ export function CampusGallerySection() {
           role="dialog"
           aria-modal="true"
           aria-label={activePhoto.caption}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#07142b]/85 backdrop-blur-xs"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#07142b]/85 backdrop-blur-xs"
           onClick={() => setActivePhoto(null)}
         >
           <div
-            className="relative max-w-4xl w-full bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-2xl"
+            className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto bg-white rounded-2xl border border-slate-200 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -206,17 +206,17 @@ export function CampusGallerySection() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="bg-[#0b1f3f] flex items-center justify-center max-h-[75vh]">
+            <div className="bg-[#0b1f3f] flex items-center justify-center max-h-[70vh] sm:max-h-[75vh]">
               <img
                 src={activePhoto.src}
                 alt={activePhoto.alt}
                 referrerPolicy="no-referrer"
-                className="max-h-[75vh] w-auto object-contain"
+                className="max-h-[70vh] sm:max-h-[75vh] w-auto object-contain"
               />
             </div>
 
-            <div className="px-6 py-4 bg-white flex flex-wrap items-center justify-between gap-2">
-              <p className="font-serif text-lg font-bold text-[#0b1f3f]">
+            <div className="px-4 py-3.5 sm:px-6 sm:py-4 bg-white flex flex-wrap items-center justify-between gap-2">
+              <p className="font-serif text-base sm:text-lg font-bold text-[#0b1f3f]">
                 {activePhoto.caption}
               </p>
               <span className="text-xs font-medium text-slate-500">

@@ -52,16 +52,16 @@ export function ContactSection() {
   );
 
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-white border-t border-slate-200">
+    <section id="contact" className="py-12 sm:py-16 lg:py-24 bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-2xl mb-8 sm:mb-12">
           <p className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c58b12] mb-3">
             Contact &amp; Inscriptions
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0b1f3f]">
+          <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0b1f3f]">
             Les inscriptions se poursuivent
           </h2>
-          <p className="mt-3 text-base text-slate-600 leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
             Contactez nos secrétariats pédagogiques pour connaître les conditions
             d&apos;admission, les pièces à fournir et les frais de scolarité.
           </p>
@@ -110,7 +110,7 @@ export function ContactSection() {
                             >
                               <a
                                 href={ph.href}
-                                className="font-medium text-[#0b1f3f] hover:text-[#c58b12] underline decoration-slate-300 underline-offset-4"
+                                className="font-medium text-[#0b1f3f] hover:text-[#c58b12] underline decoration-slate-300 underline-offset-4 py-1"
                               >
                                 {ph.label}
                               </a>
@@ -118,7 +118,7 @@ export function ContactSection() {
                                 type="button"
                                 onClick={() => handleCopy(copyKey, ph.label)}
                                 aria-label={`Copier le numéro ${ph.label}`}
-                                className="inline-flex items-center justify-center w-7 h-7 rounded-md text-slate-500 hover:text-[#0b1f3f] hover:bg-white transition-colors cursor-pointer"
+                                className="inline-flex items-center justify-center w-9 h-9 rounded-md text-slate-500 hover:text-[#0b1f3f] hover:bg-white transition-colors cursor-pointer"
                               >
                                 {isCopied ? (
                                   <Check className="w-3.5 h-3.5 text-emerald-700" />
@@ -284,10 +284,10 @@ export function ContactSection() {
                   </div>
                 </div>
 
-                <div className="pt-2 flex flex-wrap items-center gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center min-h-[48px] px-6 py-3.5 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
                   >
                     Préparer ma demande
                   </button>
@@ -297,7 +297,7 @@ export function ContactSection() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-[#0b1f3f] font-medium text-sm transition-colors whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 min-h-[48px] px-5 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-[#0b1f3f] font-medium text-sm transition-colors whitespace-nowrap shrink-0"
                   >
                     <MessageSquare className="w-4 h-4 text-[#c58b12]" />
                     <span>Direct WhatsApp</span>
@@ -322,12 +322,12 @@ export function ContactSection() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
                   <a
                     href={`${WHATSAPP_BASE}?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors whitespace-nowrap shrink-0"
+                    className="inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3.5 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors whitespace-nowrap shrink-0"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Envoyer sur WhatsApp</span>
@@ -335,7 +335,7 @@ export function ContactSection() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="px-5 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-sm font-medium text-slate-700 cursor-pointer"
+                    className="min-h-[48px] px-5 py-3.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-sm font-medium text-slate-700 cursor-pointer"
                   >
                     Modifier
                   </button>

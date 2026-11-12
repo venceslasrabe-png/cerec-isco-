@@ -69,7 +69,7 @@ export function RegistrationModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl border border-slate-200 max-w-lg w-full p-6 sm:p-8 shadow-xl relative"
+        className="bg-white rounded-2xl border border-slate-200 max-w-lg w-full max-h-[92vh] overflow-y-auto p-5 sm:p-8 shadow-xl relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -143,7 +143,7 @@ export function RegistrationModal({
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label
                   htmlFor="modal-campus"

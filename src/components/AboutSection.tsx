@@ -28,25 +28,25 @@ function renderAtoutIcon(name: CampusAtout['iconName']) {
 
 export function AboutSection() {
   return (
-    <section id="apropos" className="py-16 lg:py-24 bg-[#f8f9fb]">
+    <section id="apropos" className="py-12 sm:py-16 lg:py-24 bg-[#f8f9fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Institutional narrative + 2 complementary entities */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-6">
             <p className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c58b12] mb-3">
               À propos
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0b1f3f] leading-tight">
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0b1f3f] leading-tight">
               Une référence de l&apos;enseignement privé au Congo
             </h2>
-            <p className="mt-5 text-base text-slate-600 leading-relaxed max-w-2xl">
+            <p className="mt-4 sm:mt-5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
               Le groupe CEREC-ISCOM est reconnu comme la première école supérieure privée de
               formation professionnelle de la République du Congo. Fondé en 1990, il réunit
               deux entités complémentaires, avec des campus à Brazzaville et à Pointe-Noire
               ainsi que des centres de formation professionnelle.
             </p>
 
-            <div className="mt-8 pt-6 border-t border-slate-200 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+            <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-slate-200 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-600">
               <span>Pointe-Noire · Route de la base</span>
               <span aria-hidden="true" className="text-slate-300">
                 /
@@ -55,22 +55,22 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 grid grid-cols-1 gap-5">
+          <div className="lg:col-span-6 grid grid-cols-1 gap-4 sm:gap-5">
             {ENTITIES.map((entity) => (
               <article
                 key={entity.name}
-                className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 transition-colors duration-150 hover:border-slate-300"
+                className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 transition-colors duration-150 hover:border-slate-300"
               >
-                <div className="flex items-baseline justify-between gap-4 mb-2">
-                  <div className="flex items-baseline gap-3">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 mb-2">
+                  <div className="flex items-baseline gap-2.5">
                     <span className="text-sm font-semibold text-[#c58b12] tabular-nums">
                       {entity.number}.
                     </span>
-                    <h3 className="font-serif text-2xl font-bold text-[#0b1f3f]">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0b1f3f]">
                       {entity.name}
                     </h3>
                   </div>
-                  <span className="text-xs font-medium text-slate-500 text-right">
+                  <span className="text-xs font-medium text-slate-500 sm:text-right">
                     {entity.focus}
                   </span>
                 </div>

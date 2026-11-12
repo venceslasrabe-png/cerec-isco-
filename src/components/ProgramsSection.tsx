@@ -98,28 +98,28 @@ export function ProgramsSection({ onSelectFiliere }: ProgramsSectionProps) {
   );
 
   return (
-    <section id="filieres" className="py-16 lg:py-24 bg-[#f8f9fb] border-t border-slate-200">
+    <section id="filieres" className="py-12 sm:py-16 lg:py-24 bg-[#f8f9fb] border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
           <div>
             <p className="text-xs font-semibold tracking-[0.14em] uppercase text-[#c58b12] mb-3">
               Nos filières
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0b1f3f]">
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#0b1f3f]">
               Des domaines tournés vers l&apos;emploi
             </h2>
-            <p className="mt-3 text-base text-slate-600 max-w-xl">
+            <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-xl">
               Une offre de formation couvrant les métiers clés de l&apos;économie.
               Survolez pour mettre en pause ou cliquez sur une filière pour consulter le
               programme.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 self-start lg:self-auto">
+          <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
             <div
               role="tablist"
               aria-label="Filtrer par parcours"
-              className="inline-flex flex-wrap items-center gap-1 p-1 bg-white rounded-xl border border-slate-200"
+              className="inline-flex flex-wrap items-center gap-1 p-1 bg-white rounded-xl border border-slate-200 max-w-full"
             >
               {FILTER_OPTIONS.map((opt) => {
                 const active = filter === opt.id;
@@ -130,7 +130,7 @@ export function ProgramsSection({ onSelectFiliere }: ProgramsSectionProps) {
                     role="tab"
                     aria-selected={active}
                     onClick={() => setFilter(opt.id)}
-                    className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f] ${
+                    className={`px-3 sm:px-3.5 py-2 min-h-[38px] text-xs sm:text-sm font-medium rounded-lg transition-colors duration-150 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b1f3f] ${
                       active
                         ? 'bg-[#0b1f3f] text-white'
                         : 'text-slate-600 hover:text-[#0b1f3f]'
@@ -147,7 +147,7 @@ export function ProgramsSection({ onSelectFiliere }: ProgramsSectionProps) {
                 type="button"
                 onClick={() => setPaused((p) => !p)}
                 aria-label={paused ? 'Reprendre le défilement' : 'Mettre en pause'}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs font-medium text-[#0b1f3f] hover:bg-slate-50 transition-colors cursor-pointer whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2.5 min-h-[42px] rounded-xl bg-white border border-slate-200 text-xs font-medium text-[#0b1f3f] hover:bg-slate-50 transition-colors cursor-pointer whitespace-nowrap shrink-0"
               >
                 {paused ? (
                   <>
@@ -166,7 +166,7 @@ export function ProgramsSection({ onSelectFiliere }: ProgramsSectionProps) {
         </div>
       </div>
 
-      {/* Infinite Marquee Track (when showing all) or Static Filtered Grid */}
+      {/* Infinite Marquee Track (when showing all) or Responsive Filtered Grid */}
       {filter === 'all' ? (
         <div
           className="filiere-marquee"
@@ -180,7 +180,7 @@ export function ProgramsSection({ onSelectFiliere }: ProgramsSectionProps) {
         </div>
       ) : (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-6">
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="filiere-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {visiblePrograms.map((f) => renderCard(f, false))}
           </div>
         </div>

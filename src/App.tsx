@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f9fb] text-[#161e2e]">
+    <div className="min-h-screen flex flex-col bg-[#f8f9fb] text-[#161e2e] overflow-x-clip">
       <Navbar onOpenRegistration={openGeneralRegistration} />
 
       <main className="flex-1">

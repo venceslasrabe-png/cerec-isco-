@@ -25,14 +25,14 @@ export function ProgramModal({ filiere, onClose, onEnroll }: ProgramModalProps) 
       role="dialog"
       aria-modal="true"
       aria-labelledby="program-modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#07142b]/70 backdrop-blur-xs"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#07142b]/70 backdrop-blur-xs"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl border border-slate-200 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
+        className="bg-white rounded-2xl border border-slate-200 max-w-2xl w-full max-h-[92vh] overflow-y-auto shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative bg-[#0b1f3f] px-6 py-7 sm:px-8 sm:py-8 text-white">
+        <div className="relative bg-[#0b1f3f] px-5 py-6 sm:px-8 sm:py-8 text-white">
           <button
             type="button"
             onClick={onClose}
@@ -53,7 +53,7 @@ export function ProgramModal({ filiere, onClose, onEnroll }: ProgramModalProps) 
           </h3>
         </div>
 
-        <div className="p-6 sm:p-8 space-y-6">
+        <div className="p-5 sm:p-8 space-y-6">
           <p className="text-base text-slate-700 leading-relaxed">
             {filiere.fullDescription}
           </p>
@@ -88,14 +88,14 @@ export function ProgramModal({ filiere, onClose, onEnroll }: ProgramModalProps) 
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-4">
+          <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <span className="text-xs text-slate-500">
               Disponible à Pointe-Noire &amp; Brazzaville
             </span>
             <button
               type="button"
               onClick={() => onEnroll(filiere.title)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-[48px] px-6 py-3 rounded-xl bg-[#e0a526] hover:bg-[#eab33a] text-[#0b1f3f] font-semibold text-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
               <span>S&apos;inscrire dans cette filière</span>
               <ArrowRight className="w-4 h-4" />
