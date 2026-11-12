@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-navy-950: #07142b;
+  --color-navy-900: #0b1f3f;
+  --color-navy-800: #143263;
+  --color-gold-500: #e0a526;
+  --color-gold-600: #c58b12;
+  --color-ivory-50: #f8f9fb;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    color: #161e2e;
+    background-color: #f8f9fb;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+/* Filières marquee & hover animations matching original HTML */
+.filiere-marquee {
+  overflow: hidden;
+  padding: 12px 0 28px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.filiere-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: filiere-scroll 45s linear infinite;
+}
+
+.filiere-marquee:hover .filiere-track,
+.filiere-marquee[data-paused="true"] .filiere-track {
+  animation-play-state: paused;
+}
+
+@keyframes filiere-scroll {
+  to {
+    transform: translateX(calc(-50% - 11px));
+  }
+}
+
+.filiere-card {
+  position: relative;
+  flex: 0 0 300px;
+  background: #ffffff;
+  border: 1px solid #e3e7ef;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(14, 36, 71, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.filiere-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(14, 36, 71, 0.14);
+}
+
+.filiere-img {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.filiere-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.filiere-card:hover .filiere-img img {
+  transform: scale(1.12);
+}
+
+.filiere-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(14, 36, 71, 0.65));
+  pointer-events: none;
+}
+
+.filiere-badge {
+  position: absolute;
+  z-index: 3;
+  right: 16px;
+  top: 163px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #e0a526, #f3c04f);
+  color: #0b1f3f;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  border: 3px solid #ffffff;
+  transition: transform 0.4s ease;
+}
+
+.filiere-card:hover .filiere-badge {
+  transform: rotate(-10deg) scale(1.12);
+}
+
+@media (max-width: 860px) {
+  .filiere-card {
+    flex-basis: 260px;
+  }
+  .filiere-track {
+    animation-duration: 35s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .filiere-track {
+    animation: none !important;
+  }
+  .filiere-marquee {
+    overflow-x: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

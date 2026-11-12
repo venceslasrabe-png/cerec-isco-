@@ -1,0 +1,6 @@
+{
+  "name": "CEREC-ISCOM Pointe-Noire",
+  "description": "Groupe CEREC-ISCOM à Pointe-Noire : enseignement supérieur et formations qualifiantes en gestion, logistique, commerce international, finance et informatique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEREC-ISCOM Pointe-Noire</title>
+<meta name="description" content="Groupe CEREC-ISCOM à Pointe-Noire : enseignement supérieur et formations qualifiantes en gestion, logistique, commerce international, finance et informatique.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e2447; --navy-2:#16346a; --gold:#e0a526; --gold-soft:#fff4d6;
+  --ink:#1b2333; --muted:#5b667a; --bg:#f7f8fb; --card:#ffffff; --line:#e3e7ef;
+  --radius:18px; --shadow:0 10px 30px rgba(14,36,71,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:72px 0}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.lead{color:var(--muted);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.98rem;transition:.2s;border:2px solid transparent}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(224,165,38,.4)}
+.btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:1.2rem}
+.logo i{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;color:var(--gold);font-style:normal;font-size:1.1rem}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--gold)}
+.logo-img{height:46px;width:auto;display:block}
+.hero-logo{width:150px;height:auto;background:#fff;border-radius:20px;padding:12px;box-shadow:0 12px 30px rgba(0,0,0,.25);position:absolute;right:6%;top:50%;transform:translateY(-50%)}
+@media(max-width:860px){.hero-logo{display:none}}
+.burger{display:none;background:none;border:0;font-size:1.7rem;color:var(--navy);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;color:#fff;overflow:hidden;
+  background:radial-gradient(circle at 85% 20%,rgba(224,165,38,.25),transparent 40%),linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+  padding:96px 0 110px}
+.hero::after{content:"";position:absolute;inset:auto -10% -140px auto;width:520px;height:520px;border-radius:50%;border:60px solid rgba(255,255,255,.05)}
+.hero h1{color:#fff;font-size:clamp(2.2rem,5.5vw,3.8rem);max-width:16ch}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:56ch;margin:20px 0 32px;color:#d5def0;font-size:1.1rem}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-56px;position:relative;z-index:2}
+.stat{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);text-align:center}
+.stat b{display:block;font-family:Fraunces,serif;font-size:2rem;color:var(--navy)}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* About */
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.about h2,.head h2{font-size:clamp(1.7rem,3.5vw,2.4rem);margin-bottom:14px}
+.duo{display:grid;gap:14px}
+.duo div{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:20px}
+.duo h3{font-size:1.15rem;margin-bottom:4px}
+.duo p{color:var(--muted);font-size:.94rem}
+
+/* Programs */
+.head{text-align:center;margin-bottom:40px}
+.head .lead{margin-inline:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--gold-soft);display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+.card h3{font-size:1.2rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.94rem}
+.tint{background:#fff}
+
+/* Icônes universitaires */
+.i{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ibadge{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;color:var(--gold);margin:0 auto 16px;position:relative;
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));box-shadow:0 10px 22px rgba(14,36,71,.25);transition:transform .4s}
+.ibadge::before{content:"";position:absolute;inset:-6px;border-radius:24px;border:1.5px dashed rgba(224,165,38,.55);animation:spin 18s linear infinite}
+.ibadge .i{width:30px;height:30px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.campus{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+.ic{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 18px;text-align:center;transition:.3s}
+.ic:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.ic:hover .ibadge{transform:rotate(-8deg) scale(1.08)}
+.ic h3{font-size:1rem;margin-bottom:4px}
+.ic p{color:var(--muted);font-size:.85rem}
+.row .i{width:22px;height:22px;flex:none;color:var(--gold)}
+.stat .i{width:30px;height:30px;color:var(--gold);margin-bottom:6px}
+@media(prefers-reduced-motion:reduce){.ibadge::before{animation:none}}
+
+/* Icônes des filières */
+.pcard{position:relative}
+.fbadge{position:absolute;z-index:3;right:16px;top:163px;width:54px;height:54px;border-radius:16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--gold),#f3c04f);color:var(--navy);box-shadow:0 8px 18px rgba(0,0,0,.25);border:3px solid #fff;transition:transform .4s}
+.fbadge .i{width:26px;height:26px;stroke-width:1.8}
+.pcard:hover .fbadge{transform:rotate(-10deg) scale(1.12)}
+.pbody{padding-top:34px}
+
+/* Défilement des filières */
+.marquee{overflow:hidden;padding:10px 0 24px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{display:flex;gap:22px;width:max-content;animation:scroll 45s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(calc(-50% - 11px))}}
+.pcard{flex:0 0 300px;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 6px 18px rgba(14,36,71,.08);transition:transform .35s,box-shadow .35s}
+.pcard:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--shadow)}
+.pimg{position:relative;height:190px;background:var(--g);overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
+.pcard:hover .pimg img{transform:scale(1.12)}
+.pimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(14,36,71,.55));pointer-events:none}
+.tag{position:absolute;z-index:2;left:14px;bottom:10px;font-family:Fraunces,serif;font-weight:700;font-size:1.5rem;color:var(--gold)}
+.pbody{padding:20px 22px 24px}
+.pbody h3{font-size:1.15rem;margin-bottom:6px}
+.pbody p{color:var(--muted);font-size:.92rem}
+@media(max-width:860px){.pcard{flex-basis:250px}.track{animation-duration:35s}}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.marquee{overflow-x:auto}}
+
+/* Apparition au défilement de la page */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* Partnership banner */
+.banner{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:26px;padding:44px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.banner h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
+.banner p{color:#d5def0;max-width:55ch}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.box h3{margin-bottom:14px}
+.row{display:flex;gap:12px;margin-bottom:12px;color:var(--muted)}
+.row b{color:var(--ink)}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.social a{padding:8px 16px;border-radius:999px;background:var(--gold-soft);color:#6b4e07;font-weight:600;font-size:.88rem}
+.social a:hover{background:var(--gold)}
+
+footer{background:var(--navy);color:#a9b7d3;text-align:center;padding:28px 16px;font-size:.88rem}
+
+@media(max-width:860px){
+  section{padding:54px 0}
+  .about,.contact,.banner{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr;margin-top:-40px}
+  .burger{display:block}
+  nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);display:none}
+  nav ul.open{display:flex}
+  nav li a{display:block;padding:15px 24px;border-top:1px solid var(--line)}
+  .banner{padding:30px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c04f"/><stop offset="1" stop-color="#e0a526"/></linearGradient>
+  </defs>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 9v6"/></symbol>
+  <symbol id="i-diploma" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="12" rx="1.5"/><path d="M7.5 8h9M7.5 11.5h5"/><circle cx="16" cy="17" r="2.5"/><path d="M14.8 19.2l-.8 2.8 2-1 2 1-.8-2.8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6.5C10.5 5 8 4.5 3.5 4.5v13c4.5 0 7 .5 8.5 2 1.5-1.5 4-2 8.5-2v-13c-4.5 0-7 .5-8.5 2z"/><path d="M12 6.5v13"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.2 3 3.2 15 0 18M12 3c-3.2 3-3.2 15 0 18"/></symbol>
+  <symbol id="i-campus" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M4 10l8-6 8 6z"/><path d="M6.5 10v8M10 10v8M14 10v8M17.5 10v8"/><path d="M4.5 18h15"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/><path d="M3 13h18M11 13h2"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><rect x="8" y="6" width="8" height="4" rx=".6"/><path d="M8.5 14h.01M12 14h.01M15.5 14h.01M8.5 17.5h.01M12 17.5h.01M15.5 17.5h.01"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8z"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/><path d="M3 21h18"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/><path d="M10 9l-2 2 2 2M14 9l2 2-2 2"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#accueil" class="logo">
+      <img src="logo.jpg" alt="Logo CEREC-ISCOM" class="logo-img" onerror="this.onerror=function(){this.outerHTML='<i>C</i>'};this.src='logo.svg'">
+      <span>CEREC-ISCOM</span>
+    </a>
+    <nav>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <ul id="menu" onclick="this.classList.remove('open')">
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#filieres">Filières</a></li>
+        <li><a href="#partenariat">Partenariat</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="accueil">
+  <div class="hero">
+    <img src="logo.jpg" alt="" class="hero-logo" onerror="this.onerror=function(){this.remove()};this.src='logo.svg'">
+    <div class="wrap">
+      <span class="eyebrow">Pointe-Noire · Congo</span>
+      <h1>Construisez votre avenir avec <span>CEREC-ISCOM</span></h1>
+      <p>Institut d'enseignement supérieur et de formation qualifiante : licences, masters et formations professionnelles en gestion, logistique, commerce international, finance et informatique.</p>
+      <div class="cta">
+        <a class="btn btn-gold" href="https://wa.me/242053571515?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20CEREC-ISCOM%20Pointe-Noire." target="_blank" rel="noopener">S'inscrire →</a>
+        <a class="btn btn-ghost" href="#filieres">Découvrir les filières</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap stats">
+    <div class="stat"><b>Depuis 1990</b><span>Au service de la formation au Congo</span></div>
+    <div class="stat"><b>2 grands sites</b><span>Brazzaville et Pointe-Noire</span></div>
+    <div class="stat"><b>Licences &amp; Masters</b><span>Enseignement supérieur et professionnel</span></div>
+  </div>
+
+  <section style="padding-bottom:0">
+    <div class="wrap campus">
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-cap"/></svg></div><h3>Licences &amp; Masters</h3><p>Enseignement supérieur</p></div>
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-diploma"/></svg></div><h3>Formation qualifiante</h3><p>Compétences professionnelles</p></div>
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-book"/></svg></div><h3>Bibliothèque</h3><p>Ressources pour étudier</p></div>
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-globe"/></svg></div><h3>Ouverture internationale</h3><p>Partenariat ESTAM Bénin</p></div>
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-campus"/></svg></div><h3>Deux campus</h3><p>Brazzaville &amp; Pointe-Noire</p></div>
+      <div class="ic"><div class="ibadge"><svg class="i"><use href="#i-check"/></svg></div><h3>Inscriptions ouvertes</h3><p>Contactez-nous</p></div>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <div class="wrap about">
+      <div>
+        <span class="eyebrow">À propos</span>
+        <h2>Une référence de l'enseignement privé au Congo</h2>
+        <p class="lead">Le groupe CEREC-ISCOM est présenté comme la première école supérieure privée de formation professionnelle de la République du Congo. Il réunit deux entités complémentaires, avec des campus à Brazzaville et à Pointe-Noire ainsi que des centres de formation professionnelle.</p>
+      </div>
+      <div class="duo">
+        <div><h3>ISCOM</h3><p>Institut Supérieur de Commerce et de Management : l'établissement d'enseignement supérieur du groupe.</p></div>
+        <div><h3>CEREC</h3><p>Institut de formation qualifiante, pour acquérir rapidement des compétences professionnelles.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="filieres" class="tint">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Nos filières</span>
+        <h2>Des domaines tournés vers l'emploi</h2>
+        <p class="lead">Une offre de formation couvrant les métiers clés de l'économie.</p>
+      </div>
+    </div>
+    <div class="marquee" aria-label="Nos filières">
+      <div class="track" id="track">
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-briefcase"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#16346a,#3b6fd1)"><img loading="lazy" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=70" alt="Gestion" onerror="this.remove()"><span class="tag">01</span></div><div class="pbody"><h3>Gestion</h3><p>Pilotage d'organisations, management et administration d'entreprise.</p></div></article>
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-calc"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#0e2447,#2a8f7a)"><img loading="lazy" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=70" alt="Gestion comptable et financière" onerror="this.remove()"><span class="tag">02</span></div><div class="pbody"><h3>Gestion comptable et financière</h3><p>Comptabilité, analyse financière, gestion budgétaire et suivi.</p></div></article>
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-truck"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#6b4e07,#e0a526)"><img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=70" alt="Logistique" onerror="this.remove()"><span class="tag">03</span></div><div class="pbody"><h3>Logistique</h3><p>Organisation des flux, transport et chaîne d'approvisionnement.</p></div></article>
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-globe"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#16346a,#1fa0c4)"><img loading="lazy" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=70" alt="Commerce international" onerror="this.remove()"><span class="tag">04</span></div><div class="pbody"><h3>Commerce international</h3><p>Échanges internationaux, négociation et développement commercial.</p></div></article>
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-trend"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#0e2447,#7a3bd1)"><img loading="lazy" src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=70" alt="Finance" onerror="this.remove()"><span class="tag">05</span></div><div class="pbody"><h3>Finance</h3><p>Techniques financières et outils d'aide à la décision.</p></div></article>
+        <article class="pcard"><span class="fbadge"><svg class="i"><use href="#i-laptop"/></svg></span><div class="pimg" style="--g:linear-gradient(135deg,#0e2447,#16346a)"><img loading="lazy" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=70" alt="Informatique" onerror="this.remove()"><span class="tag">06</span></div><div class="pbody"><h3>Informatique</h3><p>Compétences numériques et technologies de l'information.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="partenariat">
+    <div class="wrap">
+      <div class="banner">
+        <div>
+          <h2>Des masters en partenariat avec l'ESTAM Bénin</h2>
+          <p>Poursuivez votre parcours jusqu'au master grâce à un partenariat académique international.</p>
+        </div>
+        <a class="btn btn-gold" href="https://wa.me/242053571515?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20les%20formations%20de%20CEREC-ISCOM." target="_blank" rel="noopener">Se renseigner</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="tint">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Contact</span>
+        <h2>Les inscriptions se poursuivent</h2>
+        <p class="lead">Contactez-nous pour connaître les conditions d'inscription et les frais de scolarité.</p>
+      </div>
+      <div class="contact">
+        <div class="box">
+          <h3>Campus de Pointe-Noire</h3>
+          <div class="row"><svg class="i"><use href="#i-pin"/></svg> <span><b>Adresse :</b> 100 m face à l'aérogare, route de la base</span></div>
+          <div class="row"><svg class="i"><use href="#i-phone"/></svg> <span><b>Téléphones :</b> <a href="tel:+242068790707">06 879 07 07</a> · <a href="tel:+242053571515">05 357 15 15</a></span></div>
+          <div class="row"><svg class="i"><use href="#i-clock"/></svg> <span><b>Ouverture :</b> à partir de 07h30 (jours ouvrables)</span></div>
+        </div>
+        <div class="box">
+          <h3>Campus de Brazzaville</h3>
+          <div class="row"><svg class="i"><use href="#i-pin"/></svg> <span><b>Adresse :</b> 201 rue Mouukoulou, Plateau des 15 ans, entre la boulangerie et le commissariat</span></div>
+          <div class="row"><svg class="i"><use href="#i-phone"/></svg> <span><b>Téléphone :</b> <a href="tel:+242068792626">06 879 26 26</a></span></div>
+          <a class="btn btn-gold" style="margin-top:12px" href="https://wa.me/242053571515?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20CEREC-ISCOM." target="_blank" rel="noopener">Inscription apprenant →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Groupe CEREC-ISCOM · Pointe-Noire, République du Congo</footer>
+<script>
+// Boucle infinie : on duplique les cartes
+(function(){
+  var t=document.getElementById('track');
+  Array.from(t.children).forEach(function(c){var k=c.cloneNode(true);k.setAttribute('aria-hidden','true');t.appendChild(k);});
+  // Animations d'apparition
+  var els=document.querySelectorAll('.stat,.duo div,.banner,.box,.head,.about > div');
+  els.forEach(function(e){e.classList.add('reveal')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+    els.forEach(function(e){io.observe(e)});
+  } else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+</body>
+</html>
